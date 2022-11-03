@@ -9,6 +9,6 @@ const rewrite = (body) => {
     }
 }
 
-let body = JSON.parse($request.body)
-// rewrite(body)
-$done({body: JSON.stringify(body)})
+let {body} = JSON.parse($request)
+rewrite(body)
+$done({body})
