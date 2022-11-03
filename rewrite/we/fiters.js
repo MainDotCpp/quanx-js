@@ -14,5 +14,4 @@ const rewrite = (body) => {
 }
 let body = JSON.parse($response.body)
 rewrite(body)
-console.log(`rewrite ---> ${JSON.stringify(body)}`)
-$done({body})
+$done({body:JSON.stringify(body)})
