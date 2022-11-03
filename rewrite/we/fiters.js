@@ -1,14 +1,16 @@
 // 重写响应
 const rewrite = (body) => {
     let {data: {cpUserList}} = body
-    if (cpUserList == null) {
+    console.log(cpUserList)
+    if (!cpUserList) {
+        console.log("return")
         return
     }
+
     for (let cpUser of cpUserList) {
         cpUser.nickname = `${cpUser.nickname}_CCCCCCCCCCCCCCCC`;
     }
 }
-
-let {body} = JSON.parse($request)
+let {body} = JSON.parse($request.body)
 rewrite(body)
 $done({body})
