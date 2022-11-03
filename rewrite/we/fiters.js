@@ -11,6 +11,6 @@ const rewrite = (body) => {
         cpUser.nickname = `${cpUser.nickname}_CCCCCCCCCCCCCCCC`;
     }
 }
-let {body} = JSON.parse(response.body)
+let {body} = JSON.parse($response.body)
 rewrite(body)
 $done({body})
