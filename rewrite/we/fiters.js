@@ -12,7 +12,7 @@ const rewrite = (body) => {
         cpUser.nickname = `${cpUser.nickname}_CCCCCCCCCCCCCCCC`;
     }
 }
-console.log(JSON.stringify($response))
 let body = JSON.parse($response.body)
 rewrite(body)
+console.log(`rewrite ---> ${JSON.stringify(body)}`)
 $done({body})
