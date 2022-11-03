@@ -1,12 +1,13 @@
 // 重写响应
 const rewrite = (body) => {
     let {data: {cpUserList}} = body
-    console.log(cpUserList)
+
+    // 判断是否匹配接口
     if (!cpUserList) {
-        console.log("return")
         return
     }
 
+    // 修改用户名
     for (let cpUser of cpUserList) {
         cpUser.nickname = `${cpUser.nickname}_CCCCCCCCCCCCCCCC`;
     }
