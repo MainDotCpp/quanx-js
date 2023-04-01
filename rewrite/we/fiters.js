@@ -12,6 +12,10 @@ const rewrite = (body) => {
         cpUser.nickname = `${cpUser.nickname}_${cpUser.online === 1 ? '###' : ''}`;
     }
 }
+try {
 let body = JSON.parse($response.body)
 rewrite(body)
 $done({body:JSON.stringify(body)})
+    }cache{
+        $done({body:body}
+    }
