@@ -13,6 +13,7 @@ const rewrite = (body) => {
     }
 }
 try {
+    console.log(JSON.stringify($response))
 let body = JSON.parse($response.body)
 rewrite(body)
 $done({body:JSON.stringify(body)})
