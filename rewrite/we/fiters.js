@@ -12,10 +12,6 @@ const rewrite = (body) => {
         cpUser.nickname = `${cpUser.nickname}_${cpUser.online === 1 ? '###' : ''}`;
     }
 }
-if ($response.headers['method'] !== 'match.cp.list'){
-$done({body:$response.body})
-    return
-}
 let body = JSON.parse($response.body)
 rewrite(body)
 $done({body:JSON.stringify(body)})
