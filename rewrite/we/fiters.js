@@ -1,5 +1,4 @@
 // 重写响应
-console.log('触发')
 const rewrite = (body) => {
     let {data: {cpUserList}} = body
 
@@ -10,7 +9,7 @@ const rewrite = (body) => {
 
     // 修改用户名
     for (let cpUser of cpUserList) {
-        cpUser.nickname = `${cpUser.nickname}_${cpUser.online === 1 ? ### : ''}`;
+        cpUser.nickname = `${cpUser.nickname}_${cpUser.online === 1 ? '###' : ''}`;
     }
 }
 let body = JSON.parse($response.body)
