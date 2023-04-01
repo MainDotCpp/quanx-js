@@ -13,12 +13,9 @@ const rewrite = (body) => {
     }
 }
 if ($response.headers['method'] !== 'match.cp.list'){
-$done()
+$done({body:$response.body})
+    return
 }
-try {
 let body = JSON.parse($response.body)
 rewrite(body)
 $done({body:JSON.stringify(body)})
-    }cache{
-        $done({body:body})
-    }
