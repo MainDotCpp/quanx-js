@@ -1,6 +1,5 @@
 
-console.log($request)
-console.log(JSON.stringify($response))
+console.log(JSON.stringify($request))
 if (/bbs.post.newer.list/.test($request.body)){
   let body = JSON.parse($response.body)
   let obj = {...body,data:[]}
